@@ -1,0 +1,439 @@
+/* ======================================= VARIABLES ======================================= */
+:root{
+	--color-menu: #262a34;
+	--color-menu-fuente: #fff;
+}
+/* ------------------------------------- BARRA LATERAL ------------------------------------- */
+body{
+	overflow-y: hidden;
+}
+.cont-tot{
+	position: relative;
+}
+.barra-lateral{
+	background: var(--color-menu);
+	color: var(--color-menu-fuente);
+	min-height: 100vh;
+	padding: 0;
+	border-right: 1px solid;
+	border-color: rgba(255,255,255,.1);
+	width: 250px;
+	transition: .5s;
+}
+.cont-bar-lat{
+	width: 100%;
+	height: 100%;
+}
+.barra-lateral .titular{
+	width: 250px;
+}
+.barra-lateral .titular h1{
+	font-size: 2rem;
+	padding: 5px 20px;
+	text-align: center;
+	font-family: jsMonkey;
+}
+.barra-lateral .titular h1::after{
+	content: "Start Up";
+}
+.barra-lateral .usrLat{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.barra-lateral .usrLat .imgUstLat{
+	width: 55%;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background: #1c1c1c;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.barra-lateral .usrLat .imgUstLat img{
+	width: 100%;
+}
+.barra-lateral .usrLat .descrUser{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	font-family: jsSumAtt;
+	letter-spacing: 1px;
+}
+.barra-lateral .usrLat .descrUser .rol-cliente{
+	margin-bottom: 0px;
+}
+.barra-lateral .toolmenu{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #1c1c1c;
+	padding: 7px;
+	color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #ccc;
+	z-index: 1000;
+	opacity: 0;
+	transition: .3s;
+}
+.barra-lateral .toolmenu::before{
+	content: '';
+	position: absolute;
+	top: calc(50% - 7.5px);
+	left: -7.5px;
+	width: 15px;
+	height: 15px;
+	background: #1c1c1c;
+	transform: rotate(45deg);
+	z-index: -1;
+}
+.barra-lateral .toolmenu i{
+	margin-right: 3px;
+		}
+.barra-lateral .menu-lateral-princ{
+	width: 100%;
+	border-top: 1px solid rgba(255,255,255,.3);
+	overflow: auto;
+	overflow-x: hidden;
+}
+.barra-lateral .menu-lateral-princ::-webkit-scrollbar {
+	width: 7px;
+	height: 10px;
+}
+.barra-lateral.act .menu-lateral-princ::-webkit-scrollbar {
+	width: 3px;
+}
+.barra-lateral .menu-lateral-princ::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 4px;
+}
+.barra-lateral .menu-lateral-princ::-webkit-scrollbar-thumb:hover {
+	background: #b3b3b3;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.barra-lateral .menu-lateral-princ::-webkit-scrollbar-thumb:active {
+	background-color: #999999;
+}
+.barra-lateral .menu-lateral-princ .menu-opcion{
+	display: block;
+	width: 100%;
+	padding: 20px;
+	color: var(--color-menu-fuente);
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid rgba(255,255,255,.1);
+	cursor: pointer;
+	font-family: jsSumAtt;
+	letter-spacing: 1px;
+	line-height: 0;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+.barra-lateral .menu-lateral-princ .menu-opcion.seleccionado{
+	background: rgba(255,255,255,.1);
+}
+.barra-lateral .menu-lateral-princ .menu-opcion:hover{
+	background: rgba(255,255,255,.1);
+}
+.barra-lateral .menu-lateral-princ .menu-opcion i{
+	margin-right: 20px;
+}
+/* ---------- BARRA LATERAL ACTIVA ---------- */
+.barra-lateral.act{
+	width: 62px;
+}
+.barra-lateral.act .titular{
+	width: 100%;
+	height: 45px;
+	border-bottom: 1px solid;
+	border-color: rgba(255,255,255,.1);
+}
+.barra-lateral.act .titular h1{
+	padding: 0px;
+}
+.barra-lateral.act .titular h1::after{
+	content: "SU";
+}
+.barra-lateral.act .menu-lateral-princ .menu-opcion i{
+	margin: 0;
+	font-size: 1.5rem;
+}
+.barra-lateral.act .usrLat .imgUstLat{
+	width: 80%;
+	margin: 10px 0px;
+}
+.barra-lateral.act .usrLat .descrUser,
+.barra-lateral.act .menu-lateral-princ .menu-opcion span{
+	display: none;
+}
+/* ------------------------------------- BARRA SUPERIOR ------------------------------------- */
+.barra-superior{
+	width: 100%;
+	height: 45px;
+	background: var(--color-menu);
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	box-shadow: 0 3px 8px #1c1c1c;
+}
+.barra-superior .notifBarSup{
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+}
+.barra-superior .notifBarSup .usuario{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 10px;
+}
+.barra-superior .notifBarSup .usuario:hover{
+	background: rgba(255,255,255,.1);
+}
+.barra-superior .notifBarSup .usuario .useLnk{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+.barra-superior .notifBarSup .usuario .useLnk .nombre-usuario{
+	margin-right: 10px;
+	color: var(--color-menu-fuente);
+	font-family: jsSumAtt;
+	letter-spacing: 1px;
+}
+.barra-superior .notifBarSup .usuario .useLnk .imagen-usuario{
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.barra-superior .notifBarSup .usuario .useLnk .imagen-usuario img{
+	width: 100%;
+}
+.barra-superior .notBarSup{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 10px;
+}
+.barra-superior .notBarSup a{
+	text-decoration: none;
+}
+.barra-superior .notBarSup i{
+	color: var(--color-menu-fuente);
+	font-size: 25px;
+	cursor: pointer;
+}
+.barra-superior .notBarSup i:hover{
+	text-shadow: 0 0 5px #fff;
+}
+.barra-superior .tglBarLat{
+	width: 45px;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: .5s;
+	background: var(--color-menu);
+}
+.barra-superior .tglBarLat{
+	color: var(--color-menu-fuente);
+	font-size: 25px;
+	cursor: pointer;
+}
+.barra-superior .tglBarLat i{
+	transition: .5s;
+}
+.barra-superior .tglBarLat:hover i{
+	text-shadow: 0 0 5px var(--color-menu-fuente);
+}
+.barra-superior .tglBarLat.act i{
+	transform: rotate(180deg);
+}
+/* ------------------------------------ CONTENIDO CENTRAL ------------------------------------ */
+.contenido-central .contCentFrm{
+	width: 100%;
+	height: calc(100vh - 45px);
+	background: #ccc;
+}
+/* ------------------------------------ NOTIFICACIONES ------------------------------------ */
+.contenedor-notif{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,.5);
+	z-index: 100;
+}
+.contenedor-notif .contenido-notif{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.contenedor-notif .contenido-notif .menu-notif{
+	position: absolute;
+	top: 0;
+	right: -285px;
+	width: 285px;
+	height: 100%;
+	max-width: 100%;
+	background: #fff;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .titular-notif{
+	width: 100%;
+	height: 45px;
+	background: var(--color-menu);
+	color: var(--color-menu-fuente);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .titular-notif .titulo-notif-mnu{
+	font-family: jsSumAtt;
+	font-size: 1.4rem;
+	line-height: 45px;
+	letter-spacing: 1px;
+	padding: 0;
+	margin: 0;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .titular-notif i{
+	font-size: 23px;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .titular-notif i:hover{
+	cursor: pointer;
+	text-shadow: 0 0 5px #fff;
+	transition: .5s;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .titular-notif.act i{
+	transform: rotate(180deg);
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .opc-mnu{
+	width: 100%;
+	overflow: auto;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .opc-mnu::-webkit-scrollbar {
+	width: 7px;
+	height: 10px;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .opc-mnu::-webkit-scrollbar-thumb {
+	background: #aaa;
+	border-radius: 4px;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .opc-mnu::-webkit-scrollbar-thumb:hover {
+	background: #b3b3b3;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .opc-mnu::-webkit-scrollbar-thumb:active {
+	background-color: #999999;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .opc-mnu .opc-mnu-not{
+	width: 100%;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	border-top: 1px solid;
+	border-color: #f1f1f1;
+	text-decoration: none;
+	color: #000;
+	transition: .3s;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .opc-mnu .opc-mnu-not span{
+	font-family: jsSumAtt;
+	letter-spacing: 1px;
+	font-size: 1.3rem;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .opc-mnu .opc-mnu-not i{
+	width: 50px;
+	height: 50px;
+	font-size: 1.4rem;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 50%;
+	background: var(--color-jardin);
+	color: var(--color-menu-fuente);
+	margin-right: 20px;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .opc-mnu .opc-mnu-not:hover{
+	background: rgba(0,0,0,.1);
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .foot-not{
+	width: 100%;
+	padding: 5px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: var(--color-menu);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.contenedor-notif .contenido-notif .menu-notif .cont-men-not .foot-not i{
+	padding: 5px;
+}
+/* --------------------------------------- RESPONSIVE --------------------------------------- */
+@media (max-width: 576px){
+	.barra-lateral{
+		position: absolute;
+		top: 0;
+		left: -100vw;
+		max-width: 100%;
+		z-index: 10;
+		height: 100vh;
+		overflow: hidden;
+	}
+	.barra-lateral .titular{
+		width: 205px;
+	}
+	.barra-lateral .titular h1{
+		font-size: 1.6rem;
+	}
+	.barra-lateral.actRs{
+		left: 0;
+	}
+	.barra-lateral .usrLat .imgUstLat{
+		width: 40%;
+	}
+}
+/* --------------------------------- PESTAÑAS DE NOTIFICACION --------------------------------- */
+.contenedor-notif .contenido-notif .seccion-notif{
+	position: absolute;
+	top: 50%;
+	left: -150%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	max-width: 95%;
+	max-height: 95%;
+	border: 1px solid #ccc;
+	transition: .5s;
+	text-align: center;
+	border-radius: 3px;
+	padding: 8px;
+}
+.contenedor-notif .contenido-notif .seccion-notif.en_pantalla{
+	left: 50%;
+}

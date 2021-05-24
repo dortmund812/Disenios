@@ -1,0 +1,414 @@
+/* ================================= OPC VIEW ================================= */
+.bar-opc-view{
+	width: 100%;
+	background: #c1c1c1;
+	padding: 5px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	z-index: -1;
+}
+.bar-opc-view.bar-bottom{
+	height: 27px;
+	/*padding: 0;*/
+	margin: 10px 0 0 0;
+	justify-content: center;
+}
+/* ================================= OPC VISTAS ================================= */
+.bar-opc-view .contentOpcView{
+	display: flex;
+}
+.bar-opc-view .contentOpcView .btn-opc-view{
+	width: 30px;
+	height: 25px;
+	outline: none;
+	position: relative;
+	border: 1px solid var(--color-menu-dos);
+	border-radius: 5px;
+	background: #fff;
+	color: #fff;
+	transition: .5s;
+	margin: 0 2.5px;
+	line-height: 25px;
+	text-align: center;
+	z-index: 2;
+}
+.bar-opc-view .contentOpcView .btn-opc-view:hover{
+	color: var(--color-menu-dos);
+	box-shadow: 0 0 5px var(--color-menu-dos);
+	cursor: pointer;
+}
+.bar-opc-view .contentOpcView .btn-opc-view::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-menu-dos);
+	z-index: -1;
+	transform-origin: left;
+	transition: transform .5s ease;
+	transform: scaleX(1);
+}
+.bar-opc-view .contentOpcView .btn-opc-view:hover::before{
+	transform-origin: right;
+	transition: transform .5s ease;
+	transform: scaleX(0);
+}
+.bar-opc-view .contentOpcView .btn-opc-view.active{
+	color: var(--color-menu-dos);
+	box-shadow: 0 0 5px var(--color-menu-dos);
+}
+.bar-opc-view .contentOpcView .btn-opc-view.active::before{
+	transform: scaleX(0);
+}
+.bar-opc-view .contentOpcView .btn-opc-view input.opc-view{
+	display: none;
+}
+/* ================================= OPC BUSCAR ================================= */
+.bar-opc-view .contentSearch{
+	width: 27px;
+	height: 27px;
+	background: var(--color-menu-dos);
+	transition: width .5s;
+	position: relative;
+	border-radius: 100px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.bar-opc-view .contentSearch.active{
+	width: 200px;
+}
+.bar-opc-view .contentSearch input{
+	position: absolute;
+	top: 2.5px;
+	left: 3.5px;
+	height: 21px;
+	width: calc(100% - 30px);
+	border-bottom-left-radius: 100px;
+	border-top-left-radius: 100px;
+	outline: none;
+	border: none;
+	padding: 0 0 0 10px;
+	z-index: 1;
+}
+.bar-opc-view .contentSearch .icon{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 27px;
+	height: 27px;
+	padding: 4px 5px;
+	color: #fff;
+	background: var(--color-menu-dos);
+	cursor: pointer;
+	box-sizing: border-box;
+	z-index: 2;
+}
+.bar-opc-view .contentSearch .icon:hover{
+	box-shadow: 0 0 5px var(--color-menu-dos);
+}
+.bar-opc-view .contentSearch .icon i{
+	font-size: 14px;
+}
+/* =============================== OPC PAGINACION =============================== */
+.bar-opc-view .contentPagination{
+	height: 20px;
+}
+.bar-opc-view .contentPagination ul{
+	position: relative;
+	height: 100%;
+	background: #fff;
+	display: flex;
+	margin: 0;
+	padding: 2.5px 5px;
+	border: 1px solid var(--color-menu-dos);
+	border-radius: 100px;
+}
+.bar-opc-view .contentPagination ul li{
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin: 0 2.5px;
+	border-radius: 50%;
+	text-align: center;
+}
+.bar-opc-view .contentPagination ul li button,
+.bar-opc-view .contentPagination ul li .btn-page{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	line-height: 20px;
+}
+.bar-opc-view .contentPagination ul li .btn-page{
+	color: #fff;
+	cursor: pointer;
+}
+.bar-opc-view .contentPagination ul li.pageNumber{
+	transition: .3s;
+}
+.bar-opc-view .contentPagination ul li.pageNumber:hover,
+.bar-opc-view .contentPagination ul li.pageNumber.active{
+	background: var(--color-menu-dos);
+}
+.bar-opc-view .contentPagination ul li.pageNumber:hover button,
+.bar-opc-view .contentPagination ul li.pageNumber.active button{
+	color: #fff;
+}
+/* =============================== OPC PAGINACION =============================== */
+.bar-opc-view .contentNumEnt{
+	width: 50px;
+	height: 27px;
+	box-sizing: border-box;
+}
+.bar-opc-view .contentNumEnt select{
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	outline: none;
+}
+/* ================================= CARD USER ================================= */
+.card-container{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.card{
+	font-family: sans-serif;
+	width: 200px;
+	height: 220px;
+	background: #2b313e;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	margin: 2.5px 0;
+}
+.card::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, 
+			var(--color-menu) 0%,
+			var(--color-menu) 25%,
+			transparent 25%,
+			transparent 50%,
+			var(--color-menu) 50%,
+			var(--color-menu) 75%,
+			transparent 75%,
+			transparent 100%);
+	background-size: 200px;
+	transition: .5s ease-out;
+	z-index: 2;
+}
+.card::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, 
+			transparent 0%,
+			transparent 25%,
+			var(--color-menu) 25%,
+			var(--color-menu) 50%,
+			transparent 50%,
+			transparent 75%,
+			var(--color-menu) 75%,
+			var(--color-menu) 100%);
+	background-size: 200px;
+	transition: .5s ease-out;
+	z-index: 2;
+}
+.card:hover::before{
+	left: -100%;
+}
+.card:hover::after{
+	left: 100%;
+}
+.card .card-content{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	background: #fff;
+	z-index: 1;
+	padding: 10px;
+	text-align: center;
+	border-radius: 6px;
+	display: flex;
+	align-content: space-between;
+	flex-wrap: wrap;
+}
+.card .card-content ul,
+.card .card-content li{
+	text-align: left;
+}
+.card .card-content ul{
+	padding: 0 15px;
+	margin: 0;
+}
+.card .card-content li{
+	margin-bottom: 10px;
+	padding: 0;
+	font-size: .9rem;
+}
+.card .card-content h3{
+	width: 100%;
+	margin: 5px 0px;
+	padding: 0;
+	text-align: center;
+}
+.card .card-content .card-cont-link{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.card .card-content .card-cont-link a{
+	width: 50%;
+	padding: 8px 12px;
+	border-radius: 100px;
+	background: var(--color-menu);
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.2rem;
+}
+.card .card-content .card-cont-link a:hover{
+	background: #2B3954;
+	text-decoration: underline;
+}
+.card .card-details{
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	transform: translateY(-50%);
+	transition: .5s;
+	z-index: 3;
+	pointer-events: none;
+}
+.card .card-details .image{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid #f1f1f1;
+	box-shadow: 0 5px 25px rgba(0,0,0,.5);
+	margin: 0 auto;
+	background: #262a34;
+}
+.card .card-details .image img{
+	width: 100%;
+}
+.card .card-details h3{
+	margin: 20px 0 0 0;
+	padding: 0;
+	color: #fff;
+	font-size: 20px;
+}
+.card .card-details span{
+	color: #fff;
+	font-size: .8rem;
+}
+.card:hover .card-details{
+	opacity: 0;
+}
+/* ================================= LIST USER ================================= */
+.list-container{
+	width: 100%;
+}
+.list-container .list{
+	width: 100%;
+	padding: 5px 10px;
+	background: var(--color-menu);
+	overflow: hidden;
+	border-radius: 10px;
+	margin: 2.5px 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+}
+.list-container .list .list-img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	box-sizing: border-box;
+}
+.list-container .list .list-img img{
+	width: 100%;
+}
+.list-container .list .list-content{
+	width: calc(100% - 110px);
+	padding: 0 1rem;
+	margin: 0 0 0 10px;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 6px;
+}
+.list-container .list .list-content .list-title{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: var(--color-menu);
+	font-size: 1.8rem;
+}
+.list-container .list .list-content .list-info{
+	width: 50%;
+}
+.list-container .list .list-content .list-info ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.list-container .list .list-content .list-info ul li{
+	color: var(--color-menu);
+}
+/* ================================= TABLE USER ================================= */
+.table-container{
+	border-collapse: collapse;
+	font-size: .9em;
+	width: 100%;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,.15);
+}
+.table-container thead tr{
+	background: var(--color-menu-dos);
+	color: var(--color-menu-fuente);
+	text-align: left;
+	font-weight: bold;
+}
+
+.table-container th,
+.table-container td{
+	padding: 12px 15px;
+}
+.table-container tbody tr{
+	border-bottom: 1px solid #dddddd;
+}
+.table-container tbody tr:nth-of-type(even){
+	background-color: #ddd;
+}
+.table-container tbody tr:last-of-type{
+	border-bottom: 2px solid var(--color-menu-dos);
+}
+.table-container tbody tr:hover{
+	color: #009879;
+}

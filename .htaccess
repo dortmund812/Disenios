@@ -1,0 +1,72 @@
+# HTID:10944696: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:10944696:
+
+# BLOQUEO DE ACCESOS A LAS CARPETAS
+Options All -Indexes
+
+# REDIRIGIR LA PAGINA ERROR 404
+ErrorDocument 404 /project/config/error/404.php
+
+# REDIRIGIR LA PAGINA 403
+ErrorDocument 403 /project/config/error/403.php
+
+RewriteEngine on
+
+# Rewrite /foo/bar to /foo/bar.php
+RewriteRule ^([^.?]+)$ %{REQUEST_URI}.php [L]
+
+# Return 404 if original request is /foo/bar.php
+RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+RewriteRule .* - [L,R=404]
+
+# NOTE! FOR APACHE ON WINDOWS: Add [NC] to RewriteCond like this:
+# RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$" [NC]
+
+# REDIRIGIR A SITIO EN MANTENIMIENTO
+# RewriteCond %{REQUEST_URI} !/project/config/error/mantenimiento.php$
+# RewriteCond %{REMOTE_ADDR} !/^123\.123\.123\.123
+# RewriteRule $ /project/config/error/mantenimiento [R=302,L]
+
+# BLOQUEAR BOTS MALICIOSOS
+# RewriteRule ^.*$ http://webfake.org [R,L] -----FALTA-----
+
+
+
+# BLOQUEAR LA LECTURA DE .htaccess
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+# BLOQUEAR LA LECTURA DE ARCHIVOS
+# ========== CONFIG ==========
+<files config.php>
+order allow,deny
+deny from all
+</files>
+# ========== FUNCIONES ==========
+<files funciones.php>
+order allow,deny
+deny from all
+</files>
+# ========== CONEXION ==========
+<files conexion.php>
+order allow,deny
+deny from all
+</files>
+# ========== USUARIO ==========
+<files usuario.php>
+order allow,deny
+deny from all
+</files>
+# ========== OBJETOS ==========
+<files objetos.php>
+order allow,deny
+deny from all
+</files>
+# ========== ACCESO ==========
+<files acceso.php>
+order allow,deny
+deny from all
+</files>

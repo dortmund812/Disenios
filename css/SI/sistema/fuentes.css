@@ -1,0 +1,41 @@
+/* ======================================= FUENTES ======================================= */
+@font-face{
+	font-family: jsMonkey;
+	src: url(../../fuentes/Monkey.otf);
+}
+@font-face{
+	font-family: jsCandle;
+	src: url(../../fuentes/jcandlestickexpand.ttf);
+}
+@font-face{
+	font-family: jsSumAtt;
+	src: url(../../fuentes/SummitAttack.ttf);
+}
+@font-face{
+	font-family: jsGrtFnt;
+	src: url(../../fuentes/BeGreatFontsa.ttf);
+}
+@font-face{
+	font-family: jsDania;
+	src: url(../../fuentes/DianaBook.ttf);
+}
+@font-face{
+	font-family: jsAnaDem;
+	src: url(../../fuentes/AnaleighDemo.ttf);
+}
+@font-face{
+	font-family: jsLemoMk;
+	src: url(../../fuentes/LEMONMILK-Regular.otf);
+}
+@font-face{
+	font-family: jsMuro;
+	src: url(../../fuentes/Muro.otf);
+}
+@font-face{
+	font-family: jsSweet;
+	src: url(../../fuentes/SweetyStrawberry.ttf);
+}
+@font-face{
+	font-family: jsTrampoline;
+	src: url(../../fuentes/Trampolinedemo.ttf);
+}
